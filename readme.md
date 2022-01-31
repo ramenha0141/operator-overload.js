@@ -6,7 +6,7 @@ Note: This text was translated using the DeepL translation. The translation may 
 ## Installation
 ### shell :
 ```bash
-$ npm install --save-dev operator-overloadjs
+$ npm install --save operator-overloadjs
 ```
 ### package.json :
 ```json
