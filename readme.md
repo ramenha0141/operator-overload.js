@@ -2,7 +2,7 @@
 operator-overload.js adds overloading to javascript.
 It can be written in a simple notation and can be converted by the built-in transpiler to work in vanilla javascript.
 
-Note: This text was translated using the DeepL translation. The translation may not be perfect.
+>Note: This text was translated using the DeepL translation. The translation may not be perfect.
 ## Installation
 ### shell :
 ```bash
@@ -63,14 +63,14 @@ CustomArray(6) [ 'a', 'b', 'c', 1, 1, 3 ]
 ```
 It worked.
 
-Note: In this example, we have overloaded the customArray class we created, not the Array class. Therefore, if you want to overload the Array class, write the following
-```javascript
-Object.defineProperty(Array.prototype, _overload.plus, {
-    value: function(a) {
-        return this.concat(a);
-    }
-});
-```
+>Note: In this example, we have overloaded the customArray class we created, not the Array class. Therefore, if you want to overload the Array class, write the following
+>```javascript
+>Object.defineProperty(Array.prototype, _overload.plus, {
+>    value: function(a) {
+>        return this.concat(a);
+>    }
+>});
+>```
 The following is a list of operators that can be overloaded as in the previous example.
 |Operator|Property identifier|Number of arguments (not including 'this')|
 |:-:|:-:|:-:|
@@ -94,7 +94,7 @@ The following is a list of operators that can be overloaded as in the previous e
 |`a !== b`|`_overload.identitynotequal`|1|
 |`a[b]`|`_overload.index`|1|
 
-Note: 'this' refers to 'a' and the first argument refers to 'b'.
+>Note: 'this' refers to 'a' and the first argument refers to 'b'.
 
 ## Please help us find the bugs
 operator-overload.js may contain a number of bugs.
