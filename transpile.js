@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import fs from 'fs';
-import path, { dirname } from 'path';
+import path from 'path';
 import antlr4 from 'antlr4';
 import JavaScriptLexer from './JavaScriptLexer.js';
 import JavaScriptParser from './JavaScriptParser.js';
@@ -59,8 +59,8 @@ function entry(dirname) {
     }
     return entryFile;
 }
-function checkDir(path) {
-    const dirname = path.dirname(path);
+function checkDir(pathname) {
+    const dirname = path.dirname(pathname);
     if (fs.existsSync(dirname)) {
         return true;
     }
