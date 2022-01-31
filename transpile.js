@@ -39,7 +39,7 @@ if (option.filename) {
     if (option.dirname) {
         const fileEntry = entry(option.dirname);
         for (let i = 0; i < fileEntry.length; i++) {
-            compile(fileEntry[i], path.join(option.outputfilename, fileEntry[i].slice(dirname.length)));
+            compile(fileEntry[i], path.join(option.outputfilename, fileEntry[i].slice(option.dirname.length)));
         }
     } else {
         compile(option.filename, option.outputfilename);
