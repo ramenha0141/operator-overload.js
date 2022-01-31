@@ -37,7 +37,7 @@ for (let i = 0; i < args.length; i++) {
 }
 if (option.filename) {
     if (option.dirname) {
-        console.log(entry(dirname));
+        console.log(entry(option.dirname));
     } else {
         compile(option.filename, option.outputfilename);
     }
