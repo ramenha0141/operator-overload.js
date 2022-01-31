@@ -16,7 +16,7 @@ $npm install --save-dev operator-overloadjs
 },
 "type": "module"
 ```
-## Syntax
+## How to Use
 In this example, we overload the "+" operator in the custom array class.
 ### src/customArray.js :
 ```javascript
@@ -40,3 +40,4 @@ Alternatively, you can specify the file name directly to transpile it.
 ```
 $npm run transpile -- ./src/customArray.js -o ./dist/customArray.js
 ```
+The transpiled file will be output.

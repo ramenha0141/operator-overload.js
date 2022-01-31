@@ -336,7 +336,13 @@ export default class JavaScriptParserVisitor extends antlr4.tree.ParseTreeVisito
 
     // Visit a parse tree produced by JavaScriptParser#classTail.
     visitClassTail(ctx) {
-        return this.visitChildren(ctx).join(' ');
+        let t = '';
+        if (ctx.Extends()) t += 'exteds ' + this.visit(ctx.singleExpression());
+        this._in();
+        t += '{' + this._n() + this.visit(ctx.classElement()).join(this._n());
+        this._out();
+        this._n();
+        return t + '}';
     }
 
 
