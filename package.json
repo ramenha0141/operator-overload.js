@@ -1,28 +1,31 @@
 {
-  "dependencies": {
-    "antlr4": "^4.9.3"
-  },
-  "type": "module",
-  "name": "operator-overloadjs",
-  "version": "1.0.0",
-  "description": "Operator overload for Javascript",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ramenha0141/operator-overload.js.git"
-  },
-  "keywords": [
-    "javascript",
-    "operator",
-    "overload"
-  ],
-  "author": "ramenha0141",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ramenha0141/operator-overload.js/issues"
-  },
-  "homepage": "https://github.com/ramenha0141/operator-overload.js#readme"
+    "dependencies": {
+        "antlr4": "^4.9.3"
+    },
+    "type": "module",
+    "name": "operator-overloadjs",
+    "version": "1.0.0",
+    "description": "Operator overload for Javascript",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ramenha0141/operator-overload.js.git"
+    },
+    "keywords": [
+        "javascript",
+        "operator",
+        "overload"
+    ],
+    "author": "ramenha0141",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/ramenha0141/operator-overload.js/issues"
+    },
+    "homepage": "https://github.com/ramenha0141/operator-overload.js#readme",
+    "bin": {
+        "overload": "./transpile.js"
+    }
 }

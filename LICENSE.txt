@@ -21,7 +21,7 @@ FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
 
-MIT License for JavaScriptLexer.g4 and JavaScriptParser.g4 from https://github.com/antlr/grammars-v4/blob/master/javascript/javascript/JavaScriptLexer.g4 and https://github.com/antlr/grammars-v4/blob/master/javascript/javascript/JavaScriptParser.g4
+MIT License for JavaScriptLexer.js and JavaScriptParser.js from https://github.com/antlr/grammars-v4/blob/master/javascript/javascript/JavaScriptLexer.g4 and https://github.com/antlr/grammars-v4/blob/master/javascript/javascript/JavaScriptParser.g4
 
 The MIT License (MIT)
 Copyright (c) 2014 by Bart Kiers (original author) and Alexandre Vitorelli (contributor -> ported to CSharp)
