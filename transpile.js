@@ -1,11 +1,12 @@
 #!/usr/bin/env node
 import fs from 'fs';
+import path, { dirname } from 'path';
 import antlr4 from 'antlr4';
 import JavaScriptLexer from './JavaScriptLexer.js';
 import JavaScriptParser from './JavaScriptParser.js';
 import JavaScriptParserVisitor from './JavaScriptParserVisitor.js';
-function compile(option) {
-    const input = fs.readFileSync(option.filename, 'utf-8');
+function compile(filename, outputfilename) {
+    const input = fs.readFileSync(filename, 'utf-8');
     const chars = new antlr4.InputStream(input);
     const lexer = new JavaScriptLexer(chars);
     const tokens = new antlr4.CommonTokenStream(lexer);
@@ -13,7 +14,7 @@ function compile(option) {
     parser.buildParseTrees = true;
     const tree = parser.program();
     const visitor = new JavaScriptParserVisitor();
-    fs.writeFileSync(option.outputfilename || (option.filename + '.js'), visitor.visit(tree));
+    fs.writeFileSync(outputfilename || (filename + '.js'), visitor.visit(tree));
 }
 const args = process.argv.slice(2);
 const option = {};
@@ -25,9 +26,31 @@ for (let i = 0; i < args.length; i++) {
             option.outputfilename = args[i];
             break;
         }
+        case '-d': {
+            i++
+            option.dirname = args[i];
+        }
         default: {
             option.filename = arg;
         }
     }
 }
-if (option.filename) compile(option);
+if (option.filename) {
+    if (option.dirname) {
+        console.log(entry(dirname));
+    } else {
+        compile(option.filename, option.outputfilename);
+    }
+}
+function entry(dirname) {
+    const entryAll = fs.readdirSync(dirname, { withFileTypes: true });
+    const entryFile = [];
+    for (let i = 0; i < entryAll.length; i++) {
+        if (entryAll[i].isFile()) {
+            entryFile.push(entryAll[i]);
+        } else {
+            entryFile.push(...entry(path.join(dirname, entryAll[i].name)));
+        }
+    }
+    return entryFile;
+}
