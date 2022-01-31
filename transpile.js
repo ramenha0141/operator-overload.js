@@ -37,7 +37,10 @@ for (let i = 0; i < args.length; i++) {
 }
 if (option.filename) {
     if (option.dirname) {
-        console.log(entry(option.dirname));
+        const fileEntry = entry(option.dirname);
+        for (let i = 0; i < fileEntry.length; i++) {
+            compile(fileEntry[i], path.join(option.outputfilename, fileEntry[i].slice(dirname.length)));
+        }
     } else {
         compile(option.filename, option.outputfilename);
     }
@@ -47,7 +50,7 @@ function entry(dirname) {
     const entryFile = [];
     for (let i = 0; i < entryAll.length; i++) {
         if (entryAll[i].isFile()) {
-            entryFile.push(entryAll[i]);
+            entryFile.push(path.join(dirname, entryAll[i].name));
         } else {
             entryFile.push(...entry(path.join(dirname, entryAll[i].name)));
         }
