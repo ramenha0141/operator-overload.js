@@ -1,6 +1,7 @@
 {
     "dependencies": {
-        "antlr4": "^4.9.3"
+        "antlr4": "^4.9.3",
+        "fs": "^0.0.1-security"
     },
     "type": "module",
     "name": "operator-overloadjs",
