@@ -39,7 +39,7 @@ if (option.filename) {
     if (option.dirname) {
         const fileEntry = entry(option.dirname);
         for (let i = 0; i < fileEntry.length; i++) {
-            const outputfilename = path.join(option.outputfilename, fileEntry[i].slice(option.dirname.length));
+            const outputfilename = path.join(option.outputfilename, fileEntry[i].split('\\').slice(1).join('\\'));
             checkDir(outputfilename);
             compile(fileEntry[i], outputfilename);
         }
