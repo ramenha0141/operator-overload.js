@@ -60,10 +60,9 @@ function entry(dirname) {
     return entryFile;
 }
 function checkDir(path) {
-    const dirname = fs.dirname(path);
+    const dirname = path.dirname(path);
     if (fs.existsSync(dirname)) {
         return true;
     }
-    checkDir(dirname);
-    fs.mkdirSync(dirname);
+    fs.mkdirSync(dirname, { recursive: true });
 }
