@@ -72,7 +72,7 @@ It worked.
 >});
 >```
 The following is a list of operators that can be overloaded as in the previous example.
-|Operator|Property identifier|Number of arguments (not including 'this')|
+|Operator|Identifier|Number of arguments (not including 'this')|
 |:-:|:-|:-:|
 |`a + b`|`_overload.plus`|1|
 |`a - b`|`_overload.minus`|1|
