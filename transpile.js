@@ -39,7 +39,9 @@ if (option.filename) {
     if (option.dirname) {
         const fileEntry = entry(option.dirname);
         for (let i = 0; i < fileEntry.length; i++) {
-            compile(fileEntry[i], path.join(option.outputfilename, fileEntry[i].slice(option.dirname.length)));
+            const outputfilename = path.join(option.outputfilename, fileEntry[i].slice(option.dirname.length));
+            checkDir(outputfilename);
+            compile(fileEntry[i], outputfilename);
         }
     } else {
         compile(option.filename, option.outputfilename);
@@ -56,4 +58,12 @@ function entry(dirname) {
         }
     }
     return entryFile;
+}
+function checkDir(path) {
+    const dirname = fs.dirname(path);
+    if (fs.existsSync(dirname)) {
+        return true;
+    }
+    checkDir(dirname);
+    fs.mkdirSync(dirname);
 }
