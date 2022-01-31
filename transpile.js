@@ -14,6 +14,7 @@ function compile(filename, outputfilename) {
     parser.buildParseTrees = true;
     const tree = parser.program();
     const visitor = new JavaScriptParserVisitor();
+    checkDir(outputfilename);
     fs.writeFileSync(outputfilename || (filename + '.js'), visitor.visit(tree));
 }
 const args = process.argv.slice(2);
@@ -40,7 +41,6 @@ if (option.filename) {
         const fileEntry = entry(option.dirname);
         for (let i = 0; i < fileEntry.length; i++) {
             const outputfilename = path.join(option.outputfilename, fileEntry[i].split('\\').slice(1).join('\\'));
-            checkDir(outputfilename);
             compile(fileEntry[i], outputfilename);
         }
     } else {
