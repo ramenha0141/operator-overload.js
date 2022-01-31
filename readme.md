@@ -41,3 +41,6 @@ Alternatively, you can specify the file name directly to transpile it.
 $npm run transpile -- ./src/customArray.js -o ./dist/customArray.js
 ```
 The transpiled file will be output.
+```diff
+
+```
